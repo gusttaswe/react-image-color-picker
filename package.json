@@ -1,18 +1,18 @@
 {
-  "name": "color-picker",
-  "version": "1.0.0",
+  "name": "react-image-color-pick",
+  "version": "1.0.6",
   "description": "Made with create-react-library",
   "author": "gusttaswe",
   "license": "MIT",
-  "repository": "gusttaswe/color-picker",
+  "repository": "gusttaswe/react-image-color-pick",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "module": "dist/index.es.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "rollup -c",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -26,7 +26,7 @@
     "build-storybook": "storybook build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": ">=16"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.20",
@@ -45,6 +45,7 @@
     "@types/react-dom": "^16.9.19",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
+    "autoprefixer": "^10.4.14",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
@@ -61,13 +62,15 @@
     "gh-pages": "^2.2.0",
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
     "prettier": "^2.0.4",
     "prop-types": "^15.8.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^3.4.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.0.20",
-    "tailwindcss": "^3.3.2",
     "typescript": "^3.9.10"
   },
   "files": [
@@ -77,5 +80,8 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "dependencies": {
+    "styled-components": "^6.0.0-rc.3"
   }
 }
