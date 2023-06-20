@@ -15,10 +15,14 @@ type ImageColorPickerProps = {
 
 const ImageColorPicker = ({
   onColorPick,
-  imageBlob
+  imageBlob,
+  zoom
 }: ImageColorPickerProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const { color, onMove } = useCanvas(canvasRef, imageBlob)
+  const { color, coordinates, hasMoved, dimensions, onMove } = useCanvas(
+    canvasRef,
+    imageBlob
+  )
 
   useEffect(() => {
     if (!canvasRef.current) return
@@ -35,6 +39,14 @@ const ImageColorPicker = ({
   return (
     <ImageColorPickContainer>
       <ColorPreview color={color} />
+      <ZoomPreview
+        zoom={zoom}
+        color={color}
+        coordinates={coordinates}
+        hasMoved={hasMoved}
+        dimensions={dimensions}
+        image={canvasRef.current?.toDataURL()!}
+      />
       <ImageColorPickCanvas
         data-testid='image-color-pick-canvas'
         id='image-color-pick-canvas'
