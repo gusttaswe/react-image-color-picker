@@ -7,6 +7,7 @@ type ColorPreviewProps = {
 
 export const ColorPreview = ({ color }: ColorPreviewProps) => (
   <ColorPreviewContainer
+    data-testid='color-preview'
     style={{
       backgroundColor: color
     }}
