@@ -1,1 +1,1 @@
-export { ImageColorPicker } from './ImageColorPicker'
+export { default as ImageColorPicker } from './ImageColorPicker'
