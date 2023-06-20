@@ -3,15 +3,21 @@
  * will be overridden with file-specific definitions by rollup
  */
 declare module '*.css' {
-  const content: { [className: string]: string };
-  export default content;
+  const content: { [className: string]: string }
+  export default content
 }
 
-interface SvgrComponent extends React.StatelessComponent<React.SVGAttributes<SVGElement>> {}
+interface SvgrComponent
+  extends React.StatelessComponent<React.SVGAttributes<SVGElement>> {}
 
 declare module '*.svg' {
-  const svgUrl: string;
-  const svgComponent: SvgrComponent;
-  export default svgUrl;
+  const svgUrl: string
+  const svgComponent: SvgrComponent
+  export default svgUrl
   export { svgComponent as ReactComponent }
 }
+
+declare module '*.png'
+declare module '*.svg'
+declare module '*.jpeg'
+declare module '*.jpg'
