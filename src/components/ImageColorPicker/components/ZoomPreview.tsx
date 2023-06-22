@@ -29,22 +29,22 @@ export const ZoomPreview = ({
   const imgPosX = x * zoomFactor - errorMargin
   const imgPosY = y * zoomFactor - errorMargin
 
-  const showPreview = zoomWidth !== 0 && zoomHeight !== 0
   return (
     <React.Fragment>
-      {showPreview && (
-        <ZoomPreviewContainer hidden={!hasMoved}>
-          <ZoomPreviewWindow
-            style={{
-              backgroundSize: `${zoomWidth}px ${zoomHeight}px`,
-              backgroundImage: `url(${image})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: `-${imgPosX}px -${imgPosY}px`,
-              borderColor: color
-            }}
-          />
-        </ZoomPreviewContainer>
-      )}
+      <ZoomPreviewContainer
+        hidden={!hasMoved}
+        data-testid='zoom-preview-container'
+      >
+        <ZoomPreviewWindow
+          style={{
+            backgroundSize: `${zoomWidth}px ${zoomHeight}px`,
+            backgroundImage: `url(${image})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: `-${imgPosX}px -${imgPosY}px`,
+            borderColor: color
+          }}
+        />
+      </ZoomPreviewContainer>
     </React.Fragment>
   )
 }
