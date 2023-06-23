@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { useCanvas } from '@/src/hooks'
 import { ColorPreview, ZoomPreview } from './components'
 import {
@@ -21,23 +21,12 @@ const ImageColorPicker = ({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { color, coordinates, hasMoved, dimensions, onMove } = useCanvas(
     canvasRef,
-    imageBlob
+    imageBlob,
+    (color: string) => onColorPick(color)
   )
 
-  useEffect(() => {
-    if (!canvasRef.current) return
-    const canvas = canvasRef.current
-    canvas.addEventListener('touchmove', onMove, { passive: true })
-    canvas.addEventListener('touchend', onMove)
-
-    return () => {
-      canvas.removeEventListener('touchmove', onMove)
-      canvas.removeEventListener('touchend', () => onColorPick(color))
-    }
-  }, [canvasRef.current])
-
   return (
-    <ImageColorPickContainer>
+    <ImageColorPickContainer data-testid='image-color-pick-container'>
       <ColorPreview color={color} />
       <ZoomPreview
         zoom={zoom}

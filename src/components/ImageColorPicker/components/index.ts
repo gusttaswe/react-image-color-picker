@@ -1,2 +1,2 @@
-export { ColorPreview } from './ColorPreview'
-export { ZoomPreview } from './ZoomPreview'
+export { ColorPreview } from './ColorPreview/ColorPreview'
+export { ZoomPreview } from './ZoomPreview/ZoomPreview'
