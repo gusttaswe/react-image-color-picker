@@ -36,6 +36,7 @@ export const ZoomPreview = ({
         data-testid='zoom-preview-container'
       >
         <ZoomPreviewWindow
+          data-testid='zoom-preview'
           style={{
             backgroundSize: `${zoomWidth}px ${zoomHeight}px`,
             backgroundImage: `url(${image})`,
