@@ -16,7 +16,7 @@ describe('ImageColorPicker Component', () => {
   it('Should render ImageColorPicker correctly', () => {
     const onColorPickMock = jest.fn()
     const { getByTestId } = render(
-      <ImageColorPicker onColorPick={onColorPickMock} imageBlob='' />
+      <ImageColorPicker onColorPick={onColorPickMock} imgSrc='' />
     )
 
     const imageColorPickContainer = getByTestId('image-color-pick-container')
@@ -25,7 +25,7 @@ describe('ImageColorPicker Component', () => {
 
   it('Should trigger onColorPick on touchend event', () => {
     const { getByTestId } = render(
-      <ImageColorPicker onColorPick={onColorPickMock} imageBlob='example.png' />
+      <ImageColorPicker onColorPick={onColorPickMock} imgSrc='example.png' />
     )
 
     const canvas = getByTestId('image-color-pick-canvas')
@@ -45,7 +45,7 @@ describe('ImageColorPicker Component', () => {
 
   it('Should trigger onColorPick on click event', () => {
     const { getByTestId } = render(
-      <ImageColorPicker onColorPick={onColorPickMock} imageBlob='example.png' />
+      <ImageColorPicker onColorPick={onColorPickMock} imgSrc='example.png' />
     )
 
     const canvas = getByTestId('image-color-pick-canvas')
@@ -72,7 +72,7 @@ describe('ImageColorPicker Component', () => {
     const { getByTestId } = render(
       <ImageColorPicker
         onColorPick={onColorPickMock}
-        imageBlob='example.png'
+        imgSrc='example.png'
         zoom={zoomFactor}
       />
     )
