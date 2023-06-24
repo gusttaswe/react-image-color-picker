@@ -7,11 +7,21 @@ export class Canvas {
   private readonly canvas!: HTMLCanvasElement
   private readonly context!: CanvasRenderingContext2D
 
-  constructor(canvas: React.RefObject<HTMLCanvasElement>) {
-    this.canvas = canvas.current as HTMLCanvasElement
+  constructor(canvasElement: HTMLCanvasElement) {
+    this.canvas = canvasElement
     this.context = this.canvas.getContext('2d', {
       willReadFrequently: true
     }) as CanvasRenderingContext2D
+  }
+
+  public listenMovements(listener: any) {
+    this.canvas.addEventListener('touchmove', listener, { passive: true })
+    this.canvas.addEventListener('pointermove', listener)
+  }
+
+  public cleanUp(listener: any) {
+    this.canvas.removeEventListener('touchmove', listener)
+    this.canvas.addEventListener('pointermove', listener)
   }
 
   public drawImage(img: any) {

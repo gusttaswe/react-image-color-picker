@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, loadImageHandler } from '@/src/util'
 
-export function useCanvas(
-  ref: React.RefObject<HTMLCanvasElement>,
+export function useColorPick(
+  canvasRef: React.RefObject<HTMLCanvasElement>,
   image: string,
   onTouchEnd: any
 ) {
   const [hasMoved, setHasMoved] = useState(false)
   const canvas = useRef<Canvas | null>(null)
-  const colorRef = useRef<string>('tranparent')
-  const coordinatesRef = useRef({ x: 0, y: 0 })
+  const [color, setColor] = useState<string>('tranparent')
+  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     if (!ref.current) return
@@ -22,8 +22,8 @@ export function useCanvas(
       const centerPoint = canvasInstance.getCanvasCenterPoint()
       const initialColor = canvasInstance.getPixelColor(centerPoint)
 
-      colorRef.current = initialColor
-      coordinatesRef.current = centerPoint
+      setColor(initialColor)
+      setCoordinates(centerPoint)
     }
 
     initializeCanvas()
@@ -58,6 +58,7 @@ export function useCanvas(
     const color = canvas.current.getPixelColor(canvasCoordinates)
     colorRef.current = color
     coordinatesRef.current = canvasCoordinates
+    console.log('??', coordinatesRef.current)
     setHasMoved(true)
   }
 
