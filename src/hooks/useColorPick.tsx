@@ -1,73 +1,63 @@
 import { useEffect, useRef, useState } from 'react'
-import { Canvas, loadImageHandler } from '@/src/util'
+import { Canvas, loadImageHandler } from '../util'
 
 export function useColorPick(
   canvasRef: React.RefObject<HTMLCanvasElement>,
-  image: string,
-  onTouchEnd: any
+  imgSrc: string
 ) {
-  const [hasMoved, setHasMoved] = useState(false)
-  const canvas = useRef<Canvas | null>(null)
+  const canvasInstanceRef = useRef<Canvas | null>(null)
+
   const [color, setColor] = useState<string>('tranparent')
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 })
 
-  useEffect(() => {
-    if (!ref.current) return
-    const canvasInstance = new Canvas(ref)
-    async function initializeCanvas() {
-      const loadedImage = await loadImageHandler(image)
-      canvasInstance.setDimensions(loadedImage.width, loadedImage.height)
-      canvasInstance.drawImage(loadedImage)
+  const onMove = (
+    event: TouchEvent | React.PointerEvent<HTMLCanvasElement>
+  ) => {
+    event.preventDefault()
 
-      const centerPoint = canvasInstance.getCanvasCenterPoint()
-      const initialColor = canvasInstance.getPixelColor(centerPoint)
+    const eventCoods = 'touches' in event ? event.touches[0] : event
+    const coordinates = { x: eventCoods.clientX, y: eventCoods.clientY }
+
+    const canvas = canvasInstanceRef.current as Canvas
+    const canvasCoordinates = canvas.getCanvasCoordinates(coordinates)
+    const color = canvas.getPixelColor(canvasCoordinates)
+    setColor(color)
+    setCoordinates(canvasCoordinates)
+  }
+
+  useEffect(() => {
+    if (canvasInstanceRef.current === null) {
+      canvasInstanceRef.current = new Canvas(canvasRef.current!)
+      canvasInstanceRef.current.listenMovements(onMove)
+    }
+
+    const canvas = canvasInstanceRef.current
+
+    async function initializeCanvas() {
+      const image = await loadImageHandler(imgSrc)
+      canvas.setDimensions(image.width, image.height)
+      canvas.drawImage(image)
+
+      const centerPoint = canvas.getCanvasCenterPoint()
+      const initialColor = canvas.getPixelColor(centerPoint)
 
       setColor(initialColor)
       setCoordinates(centerPoint)
     }
 
     initializeCanvas()
-    canvas.current = canvasInstance
-  }, [ref, image])
-
-  useEffect(() => {
-    if (!ref.current) return
-    const canvasRef = ref.current
-
-    canvasRef.addEventListener('touchmove', onMove, { passive: true })
-    canvasRef.addEventListener('touchend', () => onTouchEnd(colorRef.current))
 
     return () => {
-      canvasRef.removeEventListener('touchmove', onMove)
-      canvasRef.removeEventListener('touchend', () =>
-        onTouchEnd(colorRef.current)
-      )
+      canvas.cleanUp(onMove)
     }
-  }, [ref])
-
-  const onMove = (
-    event: TouchEvent | React.PointerEvent<HTMLCanvasElement>
-  ) => {
-    event.preventDefault()
-    if (!canvas.current) return
-
-    const eventCoods = 'touches' in event ? event.touches[0] : event
-
-    const coordinates = { x: eventCoods.clientX, y: eventCoods.clientY }
-    const canvasCoordinates = canvas.current.getCanvasCoordinates(coordinates)
-    const color = canvas.current.getPixelColor(canvasCoordinates)
-    colorRef.current = color
-    coordinatesRef.current = canvasCoordinates
-    console.log('??', coordinatesRef.current)
-    setHasMoved(true)
-  }
+  }, [imgSrc])
 
   return {
-    color: colorRef.current,
-    coordinates: coordinatesRef.current,
-    dimensions: canvas.current?.getDimensions() ?? { width: 0, height: 0 },
-    hasMoved,
-    onMove,
-    canvas
+    color,
+    coordinates,
+    dimensions: canvasInstanceRef.current?.getDimensions() ?? {
+      width: 0,
+      height: 0
+    }
   }
 }
