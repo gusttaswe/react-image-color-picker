@@ -29,7 +29,7 @@ const ImageColorPicker = ({
         color={color}
         coordinates={coordinates}
         dimensions={dimensions}
-        image={canvasRef.current?.toDataURL()!}
+        image={imgSrc}
       />
       <ImageColorPickCanvas
         data-testid='image-color-pick-canvas'
