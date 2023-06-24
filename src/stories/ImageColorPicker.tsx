@@ -13,6 +13,6 @@ export const ImageColorPickerStory = ({
   onColorPick = (color: string) => console.log('Selected Color: ', color)
 }: ImageColorPickerStoryProps) => (
   <div style={{ width: '90vw' }}>
-    <ImageColorPicker imageBlob={imageBlob} onColorPick={onColorPick} />
+    <ImageColorPicker imgSrc={imageBlob} onColorPick={onColorPick} />
   </div>
 )
