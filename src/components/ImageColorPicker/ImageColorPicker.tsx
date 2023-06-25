@@ -6,12 +6,7 @@ import {
   ImageColorPickContainer
 } from './ImageColorPicker.styles'
 import { useColorPick } from '@/src/hooks'
-
-type ImageColorPickerProps = {
-  onColorPick(color: string): void
-  imgSrc: string
-  zoom?: number
-}
+import { ImageColorPickerProps } from './ImageColorPicker.types'
 
 const ImageColorPicker = ({
   onColorPick,
