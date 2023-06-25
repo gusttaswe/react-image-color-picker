@@ -11,7 +11,6 @@ describe('ZoomPreview Component', () => {
     const { getByTestId } = render(
       <ZoomPreview
         color={initialColor}
-        hasMoved
         coordinates={coordinates}
         dimensions={dimensions}
         image=''
@@ -23,25 +22,6 @@ describe('ZoomPreview Component', () => {
     expect(zoomPreviewContainer.hidden).toBe(false)
   })
 
-  it('Should be hidden when hasMoved property is false', () => {
-    const initialColor = '#FFFFFF'
-    const coordinates = { x: 0, y: 0 }
-    const dimensions = { width: 100, height: 100 }
-
-    const { getByTestId } = render(
-      <ZoomPreview
-        color={initialColor}
-        hasMoved={false}
-        coordinates={coordinates}
-        dimensions={dimensions}
-        image=''
-      />
-    )
-
-    const zoomPreviewContainer = getByTestId('zoom-preview-container')
-    expect(zoomPreviewContainer.hidden).toBe(true)
-  })
-
   it('Should set the border-color equal to the color parameter', () => {
     const initialColor = 'rgb(255, 255, 255)'
     const coordinates = { x: 0, y: 0 }
@@ -50,7 +30,6 @@ describe('ZoomPreview Component', () => {
     const { getByTestId } = render(
       <ZoomPreview
         color={initialColor}
-        hasMoved
         coordinates={coordinates}
         dimensions={dimensions}
         image=''

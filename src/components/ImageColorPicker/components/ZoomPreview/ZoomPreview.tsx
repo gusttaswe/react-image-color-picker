@@ -4,7 +4,6 @@ import { Coordinates } from '@/src/util'
 import { ZoomPreviewContainer, ZoomPreviewWindow } from './ZoomPreview.styles'
 
 type ColorPreviewProps = {
-  hasMoved: boolean
   coordinates: Coordinates
   color: string
   dimensions: { width: number; height: number }
@@ -15,7 +14,6 @@ type ColorPreviewProps = {
 export const ZoomPreview = ({
   color,
   coordinates,
-  hasMoved,
   dimensions,
   image,
   zoom = 0.5
@@ -31,11 +29,9 @@ export const ZoomPreview = ({
 
   return (
     <React.Fragment>
-      <ZoomPreviewContainer
-        hidden={!hasMoved}
-        data-testid='zoom-preview-container'
-      >
+      <ZoomPreviewContainer data-testid='zoom-preview-container'>
         <ZoomPreviewWindow
+          data-testid='zoom-preview'
           style={{
             backgroundSize: `${zoomWidth}px ${zoomHeight}px`,
             backgroundImage: `url(${image})`,

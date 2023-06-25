@@ -1,10 +1,10 @@
 {
-  "name": "react-image-color-pick",
-  "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "name": "react-image-color-picker",
+  "version": "1.2.0",
+  "description": "The `react-image-color-picker` is a powerful and versatile React component that enables users to easily select colors from an image. It provides an intuitive and interactive interface for color picking, zooming, and previewing, making it ideal for various use cases such as image editing, color analysis, and design applications.",
   "author": "gusttaswe",
   "license": "MIT",
-  "repository": "gusttaswe/react-image-color-pick",
+  "repository": "gusttaswe/react-image-color-picker",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "source": "src/index.tsx",
@@ -54,7 +54,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-storybook": "^0.6.12",
     "gh-pages": "^2.2.0",
@@ -82,5 +82,29 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "keywords": [
+    "react",
+    "image color picker",
+    "color picker",
+    "color pick",
+    "color selection",
+    "color picker component",
+    "image color selection",
+    "image color palette",
+    "image color picking",
+    "image color preview",
+    "zoom preview",
+    "image zooming",
+    "canvas color picker",
+    "responsive color picker",
+    "color picking tool",
+    "image manipulation",
+    "color analysis",
+    "image analysis",
+    "color detection",
+    "image processing",
+    "color extraction",
+    "color identification"
+  ]
 }

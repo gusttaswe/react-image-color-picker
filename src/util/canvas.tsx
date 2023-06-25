@@ -1,5 +1,3 @@
-import React from 'react'
-
 export type Coordinates = {
   x: number
   y: number
@@ -9,25 +7,30 @@ export class Canvas {
   private readonly canvas!: HTMLCanvasElement
   private readonly context!: CanvasRenderingContext2D
 
-  constructor(canvas: React.RefObject<HTMLCanvasElement>) {
-    this.canvas = canvas.current as HTMLCanvasElement
-    this.context = this.get2DContext({
+  constructor(canvasElement: HTMLCanvasElement) {
+    this.canvas = canvasElement
+    this.context = this.canvas.getContext('2d', {
       willReadFrequently: true
     }) as CanvasRenderingContext2D
   }
 
-  public async setCanvasImage(image: any): Promise<void> {
-    return new Promise((resolve) => {
-      const img = new Image()
-      img.crossOrigin = 'Anonymous'
-      img.onload = () => {
-        this.canvas.width = img.width
-        this.canvas.height = img.height
-        this.context.drawImage(img, 0, 0)
-        resolve()
-      }
-      img.src = image
-    })
+  public listenMovements(listener: any) {
+    this.canvas.addEventListener('touchmove', listener, { passive: true })
+    this.canvas.addEventListener('pointermove', listener)
+  }
+
+  public cleanUp(listener: any) {
+    this.canvas.removeEventListener('touchmove', listener)
+    this.canvas.addEventListener('pointermove', listener)
+  }
+
+  public drawImage(img: any) {
+    this.context.drawImage(img, 0, 0)
+  }
+
+  public setDimensions(width: number, height: number) {
+    this.canvas.width = width
+    this.canvas.height = height
   }
 
   public getDimensions() {
@@ -44,15 +47,8 @@ export class Canvas {
     }
   }
 
-  public get2DContext({ willReadFrequently }: { willReadFrequently: boolean }) {
-    return this.canvas.getContext('2d', {
-      willReadFrequently: willReadFrequently
-    })
-  }
-
   public getCanvasCoordinates(coordinates: Coordinates) {
     const rect = this.canvas.getBoundingClientRect()
-
     const scaleX = this.canvas.width / rect.width
     const scaleY = this.canvas.height / rect.height
     const x = (coordinates.x - rect.left) * scaleX

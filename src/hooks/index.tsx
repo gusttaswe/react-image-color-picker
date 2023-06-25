@@ -1,1 +1,1 @@
-export { useCanvas } from './useColorPick'
+export { useColorPick } from './useColorPick'
