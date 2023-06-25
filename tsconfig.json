@@ -2,6 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "esnext",
+    "downlevelIteration": true,
     "lib": ["dom", "esnext"],
     "moduleResolution": "node",
     "jsx": "react",
@@ -14,8 +15,12 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": ["src"],
+  "include": ["src", "src/config.d.ts"],
   "exclude": ["node_modules", "dist", "example"]
 }
