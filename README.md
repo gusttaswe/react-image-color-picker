@@ -1,6 +1,6 @@
 # React Image Color Picker 
 
-[![NPM](https://img.shields.io/npm/v/react-image-color-pick.svg)](https://www.npmjs.com/package/react-image-color-pick) 
+[![NPM](https://img.shields.io/npm/v/react-image-color-picker.svg)](https://www.npmjs.com/package/react-image-color-picker) 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 The _`react-image-color-picker`_ is a powerful and versatile React component that enables users to easily select colors from an image. It provides an intuitive and interactive interface for color picking, zooming, and previewing, making it ideal for various use cases such as image editing, color analysis, and design applications.
@@ -95,7 +95,7 @@ zoom?: number
 ```
 
 ## ✨ Give a Star
-You can give a star at: https://github.com/gusttaswe/react-image-color-pick
+You can give a star at: https://github.com/gusttaswe/react-image-color-picker
 ## License
 
-MIT © [gusttaswe](https://github.com/gusttaswe)
+[MIT](https://github.com/gusttaswe/react-image-color-picker/blob/main/LICENSE) © [gusttaswe](https://github.com/gusttaswe)
