@@ -11,10 +11,9 @@ The _`react-image-color-picker`_ is a powerful and versatile React component tha
 
 ## Table of Contents
   - [Features](#key-features)
-  - [Install react-image-color-picker](#installation)
+  - [Install react-image-color-picker](#install)
   - [How to Use](#usage)
   - [Props](#props)
-  - [Give a Start](#✨-give-a-star)
   - [Licence](#license)
   
 ## Key Features
