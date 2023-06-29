@@ -12,6 +12,7 @@ export const ImageColorPickCanvas = styled.canvas`
 
 export const ImageColorPickContainer = styled.div`
   position: relative;
+  display: flex;
   width: 100%;
   height: 100%;
 `
