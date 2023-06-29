@@ -3,7 +3,7 @@
 [![NPM](https://img.shields.io/npm/v/react-image-color-picker.svg)](https://www.npmjs.com/package/react-image-color-picker) 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-The _`react-image-color-picker`_ is a powerful and versatile React component that enables users to easily select colors from an image. It provides an intuitive and interactive interface for color picking, zooming, and previewing, making it ideal for various use cases such as image editing, color analysis, and design applications.
+The _`react-image-color-picker`_ is a powerful and versatile **eye-dropper React component** that enables users to easily select colors from an image. It provides an intuitive and interactive interface for color picking, zooming, and previewing, making it ideal for various use cases such as image editing, color analysis, and design applications.
 
 |![Art Illustrated by Kelly Keiko](https://technog.com.br/color-picker/0f1c65bc-13a5-11ee-be56-0242ac120003.gif)|
 |:--:| 
@@ -17,7 +17,9 @@ The _`react-image-color-picker`_ is a powerful and versatile React component tha
   - [Licence](#license)
   
 ## Key Features
-  - **Touch Support:** Seamlessly support touch gestures for color picking on touch-enabled devices.
+  - **Touch Support:** fully compatible with mobile devices through touch gestures.
+  - **Cross-Browser Compatibility:** Ensures compatibility with major web browsers, including Chrome, Firefox, Safari, Edge, Opera and Samsung Internet allowing users to access and use the application across different platforms seamlessly.
+    - **It DOES NOT relies on browser EyeDropper API!** 
   - **Color picking:** Enable users to select colors from an image effortlessly.
   - **Real-time Color Feedback:** Display the selected color in real-time for immediate visual feedback.
   - **Zoom:** Provides a zoomed-in preview of a specific area of the image based on user interaction.
@@ -71,7 +73,7 @@ export default App;
 
 **Result**
 
-![Art Illustrated by Kelly Keiko https://www.artstation.com/imkeiko](/static/react-color-picker.png)
+![Art Illustrated by Kelly Keiko https://www.artstation.com/imkeiko](/static/react-color-picker-full.png)
 
 
 ## Props
