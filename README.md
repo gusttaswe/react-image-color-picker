@@ -1,7 +1,7 @@
 # React Image Color Picker 
 
 [![NPM](https://img.shields.io/npm/v/react-image-color-picker.svg)](https://www.npmjs.com/package/react-image-color-picker) 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+ [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 The _`react-image-color-picker`_ is a powerful and versatile **eye-dropper React component** that enables users to easily select colors from an image. It provides an intuitive and interactive interface for color picking, zooming, and previewing, making it ideal for various use cases such as image editing, color analysis, and design applications.
 
@@ -11,6 +11,7 @@ The _`react-image-color-picker`_ is a powerful and versatile **eye-dropper React
 
 ## Table of Contents
   - [Features](#key-features)
+  - [Demo!](#demo)
   - [Install react-image-color-picker](#install)
   - [How to Use](#usage)
   - [Props](#props)
@@ -25,6 +26,17 @@ The _`react-image-color-picker`_ is a powerful and versatile **eye-dropper React
   - **Zoom:** Provides a zoomed-in preview of a specific area of the image based on user interaction.
   - **Easy Integration:** Seamlessly integrate the component into React applications with minimal setup.
   - **Customization:** Supports customization of zoom level, image source, and more.
+
+
+## Demo!
+<a 
+  href="https://technog.com.br/projects/react-image-color-picker/#try-it-out"
+  target="_blank"
+  rel="noopener noreferrer"
+  style="display: inline-block; padding: 10px 20px; border-radius: 5px; background-color: #362035; box-shadow: 1px 1px 4px #000; color: white; text-decoration: none;">
+  Try it out!
+</a>
+
 
 ## Install
 
@@ -83,7 +95,7 @@ export default App;
   * Callback triggered when a color is selected.
   * @param color Color selected
   */
-onColorPick(color: string): void
+onColorPick: (color: string): void
 /**
   * Image that will be rendered inside the component
   */
