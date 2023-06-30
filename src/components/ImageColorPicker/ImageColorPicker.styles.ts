@@ -7,6 +7,7 @@ export const ImageColorPickCanvas = styled.canvas`
   top: 0;
   left: 0;
   z-index: 50;
+  touch-action: none;
   object-fit: cover;
 `
 
