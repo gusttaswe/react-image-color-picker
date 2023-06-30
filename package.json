@@ -1,6 +1,6 @@
 {
   "name": "react-image-color-picker",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "The react-image-color-picker is a powerful and versatile eye-dropper React component that enables users to easily select colors from an image. It provides an intuitive and interactive interface for color picking, zooming, and previewing, making it ideal for various use cases such as image editing, color analysis, and design applications.",
   "author": "gusttaswe <dev.gustta.h@gmail.com>",
   "license": "MIT",
