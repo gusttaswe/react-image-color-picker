@@ -2,6 +2,7 @@
 import React from 'react'
 import { Coordinates } from '@/src/util'
 import { ZoomPreviewContainer, ZoomPreviewWindow } from './ZoomPreview.styles'
+import { useMobileDetect } from '@/src/hooks'
 
 type ColorPreviewProps = {
   coordinates: Coordinates
@@ -18,9 +19,11 @@ export const ZoomPreview = ({
   image,
   zoom = 0.5
 }: ColorPreviewProps) => {
+  const isMobile = useMobileDetect()
+
   const { x, y } = coordinates
   const zoomFactor = zoom
-  const errorMargin = 50
+  const errorMargin = isMobile ? 30 : 50
 
   const zoomWidth = dimensions.width * zoomFactor
   const zoomHeight = dimensions.height * zoomFactor

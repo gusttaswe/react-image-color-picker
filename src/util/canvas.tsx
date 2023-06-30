@@ -15,7 +15,7 @@ export class Canvas {
   }
 
   public listenMovements(listener: any) {
-    this.canvas.addEventListener('touchmove', listener, { passive: true })
+    this.canvas.addEventListener('touchmove', listener)
     this.canvas.addEventListener('pointermove', listener)
   }
 
