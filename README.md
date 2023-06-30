@@ -19,7 +19,7 @@ The _`react-image-color-picker`_ is a powerful and versatile **eye-dropper React
   
 ## Key Features
   - **Touch Support:** fully compatible with mobile devices through touch gestures.
-  - **Cross-Browser Compatibility:** Ensures compatibility with major web browsers, including Chrome, Firefox, Safari, Edge, Opera and Samsung Internet allowing users to access and use the application across different platforms seamlessly.
+  - **Cross-Browser Compatibility:** Ensures compatibility with major web browsers, including Chrome, Firefox, Edge and Samsung Internet allowing users to access and use the application across different platforms seamlessly.
     - **It DOES NOT relies on browser EyeDropper API!** 
   - **Color picking:** Enable users to select colors from an image effortlessly.
   - **Real-time Color Feedback:** Display the selected color in real-time for immediate visual feedback.
