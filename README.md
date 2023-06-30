@@ -1,29 +1,42 @@
 # React Image Color Picker 
 
-[![NPM](https://img.shields.io/npm/v/react-image-color-pick.svg)](https://www.npmjs.com/package/react-image-color-pick) 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-image-color-picker.svg)](https://www.npmjs.com/package/react-image-color-picker) 
+ [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-The _`react-image-color-picker`_ is a powerful and versatile React component that enables users to easily select colors from an image. It provides an intuitive and interactive interface for color picking, zooming, and previewing, making it ideal for various use cases such as image editing, color analysis, and design applications.
+The _`react-image-color-picker`_ is a powerful and versatile **eye-dropper React component** that enables users to easily select colors from an image. It provides an intuitive and interactive interface for color picking, zooming, and previewing, making it ideal for various use cases such as image editing, color analysis, and design applications.
 
-|![Art Illustrated by Kelly Keiko https://www.artstation.com/imkeiko](https://technog.com.br/color-picker/0f1c65bc-13a5-11ee-be56-0242ac120002.gif)|
+|![Art Illustrated by Kelly Keiko](https://technog.com.br/color-picker/0f1c65bc-13a5-11ee-be56-0242ac120003.gif)|
 |:--:| 
 |  Art by [**_`Kelly Keiko`_**](https://www.artstation.com/imkeiko)  |
 
 ## Table of Contents
   - [Features](#key-features)
-  - [Install react-image-color-picker](#installation)
+  - [Demo!](#demo)
+  - [Install react-image-color-picker](#install)
   - [How to Use](#usage)
   - [Props](#props)
-  - [Give a Start](#✨-give-a-star)
   - [Licence](#license)
   
 ## Key Features
-  - **Touch Support:** Seamlessly support touch gestures for color picking on touch-enabled devices.
+  - **Touch Support:** fully compatible with mobile devices through touch gestures.
+  - **Cross-Browser Compatibility:** Ensures compatibility with major web browsers, including Chrome, Firefox, Safari, Edge, Opera and Samsung Internet allowing users to access and use the application across different platforms seamlessly.
+    - **It DOES NOT relies on browser EyeDropper API!** 
   - **Color picking:** Enable users to select colors from an image effortlessly.
   - **Real-time Color Feedback:** Display the selected color in real-time for immediate visual feedback.
   - **Zoom:** Provides a zoomed-in preview of a specific area of the image based on user interaction.
   - **Easy Integration:** Seamlessly integrate the component into React applications with minimal setup.
   - **Customization:** Supports customization of zoom level, image source, and more.
+
+
+## Demo!
+<a 
+  href="https://technog.com.br/projects/react-image-color-picker/#try-it-out"
+  target="_blank"
+  rel="noopener noreferrer"
+  style="display: inline-block; padding: 10px 20px; border-radius: 5px; background-color: #362035; box-shadow: 1px 1px 4px #000; color: white; text-decoration: none;">
+  Try it out!
+</a>
+
 
 ## Install
 
@@ -72,7 +85,7 @@ export default App;
 
 **Result**
 
-![Art Illustrated by Kelly Keiko https://www.artstation.com/imkeiko](/static/react-color-picker.png)
+![Art Illustrated by Kelly Keiko https://www.artstation.com/imkeiko](/static/react-color-picker-full.png)
 
 
 ## Props
@@ -82,7 +95,7 @@ export default App;
   * Callback triggered when a color is selected.
   * @param color Color selected
   */
-onColorPick(color: string): void
+onColorPick: (color: string): void
 /**
   * Image that will be rendered inside the component
   */
@@ -95,7 +108,7 @@ zoom?: number
 ```
 
 ## ✨ Give a Star
-You can give a star at: https://github.com/gusttaswe/react-image-color-pick
+You can give a star at: https://github.com/gusttaswe/react-image-color-picker
 ## License
 
-MIT © [gusttaswe](https://github.com/gusttaswe)
+[MIT](https://github.com/gusttaswe/react-image-color-picker/blob/main/LICENSE) © [gusttaswe](https://github.com/gusttaswe)

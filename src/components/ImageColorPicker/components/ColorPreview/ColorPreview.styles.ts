@@ -9,4 +9,9 @@ export const ColorPreviewContainer = styled.div`
   border-radius: 10px;
   border: 3px solid white;
   z-index: 100;
+
+  @media (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
 `
