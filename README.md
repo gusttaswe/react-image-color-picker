@@ -18,14 +18,21 @@ The _`react-image-color-picker`_ is a powerful and versatile **eye-dropper React
   - [Licence](#license)
   
 ## Key Features
-  - **Touch Support:** fully compatible with mobile devices through touch gestures.
-  - **Cross-Browser Compatibility:** Ensures compatibility with major web browsers, including Chrome, Firefox, Edge and Samsung Internet allowing users to access and use the application across different platforms seamlessly.
-    - **It DOES NOT relies on browser EyeDropper API!** 
-  - **Color picking:** Enable users to select colors from an image effortlessly.
-  - **Real-time Color Feedback:** Display the selected color in real-time for immediate visual feedback.
-  - **Zoom:** Provides a zoomed-in preview of a specific area of the image based on user interaction.
-  - **Easy Integration:** Seamlessly integrate the component into React applications with minimal setup.
-  - **Customization:** Supports customization of zoom level, image source, and more.
+  - 🖐️ Touch Support: Fully compatible with mobile devices, the react-image-color-picker allows users to enjoy a seamless color selection experience using touch gestures.
+
+  - 🌐 Cross-Browser Compatibility: Rest assured, your users can access and use this package across various platforms, as it ensures compatibility with major web browsers such as **Chrome, Safari, Firefox, Edge, Opera, and Samsung Internet.**
+
+  - 🚫 No Browser Dependencies: Unlike other solutions, the react-image-color-picker does not rely on browser EyeDropper API, providing consistent performance and reliability.
+
+  - 🌈 Color Picking Made Easy: Enable your users to effortlessly pick colors from any image, thanks to the intuitive and interactive interface.
+
+  - 🎨 Real-time Color Feedback: Instantly display the selected color, giving users immediate visual feedback and enhancing their editing experience.
+
+  - 🔍 Zoom Functionality: Dive into the finer details with the zoom feature, which provides a magnified preview of a specific area of the image based on user interaction.
+
+  - 💼 Seamless Integration: Integrating the react-image-color-picker into your React applications is a breeze, requiring minimal setup. You'll have it up and running in no time!
+
+  - 🎨 Customization Options: Tailor the color picker to your specific needs by adjusting the zoom level, image source, and more. It offers the flexibility you desire.
 
 
 ## Demo!
@@ -95,7 +102,7 @@ export default App;
   * Callback triggered when a color is selected.
   * @param color Color selected
   */
-onColorPick: (color: string): void
+onColorPick: (color: string) => void
 /**
   * Image that will be rendered inside the component
   */
