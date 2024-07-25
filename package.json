@@ -7,7 +7,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/gusttaswe/react-image-color-picker"
+    "url": "https://github.com/gusttaswe/react-image-color-picker.git"
   },
   "readme": "README.md",
   "homepage": "https://technog.com.br/projects/react-image-color-picker",
